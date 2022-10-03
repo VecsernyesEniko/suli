@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+struct Tantargy {
+    int mark;
+    int weights;
+};
 void dump_arr(int* arr, int size){
     int len=0;
     char result[100];
@@ -22,14 +27,26 @@ void dump_arr(int* arr, int size){
 }
 
 int main(){
-    int arr[10];
+    Tantargy arr[5];
+    arr[0].mark=2;
+    arr[0].weights=6;
+    arr[1].mark=5;
+    arr[1].weights=5;
+    arr[2].mark=4;
+    arr[2].weights=5;
+    arr[3].mark=2;
+    arr[3].weights=2;
+    arr[4].mark=5;
+    arr[4].weights=4;
+    
 
-    int n=sizeof(arr)/sizeof(arr[0]);
-    for (int i=0; i<n; ++i){
-        arr[i]=0;
+    int osszeg=0;
+    for(int i=0; i<5; ++i){
+        osszeg+=arr[i].mark*arr[i].weights;
     }
     
-    dump_arr(arr,n);
-    
+    dump_arr(arr,arr_len);
+    dump_arr(weights, weights_len);
+    printf("%i",osszeg);
     
 }
